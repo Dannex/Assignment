@@ -1,6 +1,8 @@
 # Assignment
 
 Task1:
+Create Ansible playbooks and roles to create locally or remotely a docker stack using
+docker-compose that runs a .net core application and a database (Postgresql or MySQL)
 
 **Overview**
 This documentation provides an overview and guidance for using an Ansible playbook designed to set up a .NET application along with a PostgreSQL database using Docker and Docker Compose. The playbook is structured into two roles: docker and app. The docker role is responsible for installing Docker and necessary packages, while the app role is responsible for running a Docker Compose file that sets up the .NET application and the PostgreSQL database.
@@ -32,8 +34,7 @@ Run the playbook with the following command:  "sudo ansible-playbook playbook.ym
 
 
 Task2:
-1. How would you structure your Terraform project if you have multiple environments
-and use different cloud providers?
+1. How would you structure your Terraform project if you have multiple environmentsand use different cloud providers?
 
 terraform-project/
 │
@@ -54,3 +55,12 @@ terraform-project/
     └── terraform.tfvars
 
 I would have something like above sotred in a git repository. One folder for each environment and ahve defined in providers the cloud providers needed: GCP, AWS, AZURE, etc..
+
+
+Task3:
+If you have multiple Ubuntu prod instances, How would you monitor them? What would be your monitoring strategy?
+
+I would probably install prometheus client on every ubuntu instance on bootstrap (userdata) and use a separate dedicated instance for Prometheus. I would install also Grafana on separate instance and use Prometheus as data source.
+Create dashboards in grafana with defferent metrics like CPU ussage, memory usage, disk usage, etc... 
+Create alerts in Grafana for Warnings and Critical with threshold over 70%  for Warning  and 90% for Critical.
+Use Cloudwatch for the health status and alerts if Grafna instance is healthy. 
