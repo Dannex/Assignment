@@ -28,4 +28,29 @@ Copying the Docker Compose file to the target machine.
 Running the Docker Compose command to bring up the application and database services.
 Usage
 
-Run the playbook with the following command:  sudo ansible-playbook playbook.yml -c local -i localhost -K
+Run the playbook with the following command:  "sudo ansible-playbook playbook.yml -c local -i localhost -K"
+
+
+Task2:
+1. How would you structure your Terraform project if you have multiple environments
+and use different cloud providers?
+
+terraform-project/
+│
+├── README.md
+│
+├── providers.tf
+│
+├── test/
+│   ├── main.tf
+│   ├── variables.tf
+│   ├── outputs.tf
+│   └── terraform.tfvars
+│
+└── prod/
+    ├── main.tf
+    ├── variables.tf
+    ├── outputs.tf
+    └── terraform.tfvars
+
+I would have something like above sotred in a git repository. One folder for each environment and ahve defined in providers the cloud providers needed: GCP, AWS, AZURE, etc..
