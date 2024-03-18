@@ -39,11 +39,17 @@ Task2:
 
 
 terraform-project/README.md
+
 terraform-project/providers.tf
+
 terraform-project/test/main.tf
+
 terraform-project/test/variables.tf
+
 terraform-project/prod/
+
 terraform-project/prod/main.tf
+
 terraform-project/prod/variables.tf
 
 I would have something like above sotred in a git repository. One folder for each environment and ahve defined in providers the cloud providers needed: GCP, AWS, AZURE, etc..
