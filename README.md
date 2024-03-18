@@ -36,23 +36,15 @@ Run the playbook with the following command:  "sudo ansible-playbook playbook.ym
 Task2:
 1. How would you structure your Terraform project if you have multiple environmentsand use different cloud providers?
 
-terraform-project/
-│
-├── README.md
-│
-├── providers.tf
-│
-├── test/
-│   ├── main.tf
-│   ├── variables.tf
-│   ├── outputs.tf
-│   └── terraform.tfvars
-│
-└── prod/
-    ├── main.tf
-    ├── variables.tf
-    ├── outputs.tf
-    └── terraform.tfvars
+
+
+terraform-project/README.md
+terraform-project/providers.tf
+terraform-project/test/main.tf
+terraform-project/test/variables.tf
+terraform-project/prod/
+terraform-project/prod/main.tf
+terraform-project/prod/variables.tf
 
 I would have something like above sotred in a git repository. One folder for each environment and ahve defined in providers the cloud providers needed: GCP, AWS, AZURE, etc..
 
