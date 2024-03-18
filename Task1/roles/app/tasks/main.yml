@@ -1,0 +1,8 @@
+---
+  - name: Start docker application
+    become: yes
+    community.docker.docker_compose:
+      project_src: /home/dannex/Task1/roles/app/files
+      files:
+      - docker-compose.yml
+      state: present
